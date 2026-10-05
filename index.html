@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>¿Uber se comió al taxi y va por el colectivo?</title>
-<meta name="description" content="El colectivo de Rosario pierde pasajeros que pagan, Nación retiró su aporte y las motos se abaratan frente al boleto. Datos de los estudios de costos del TUP 2018-2025.">
+<meta name="description" content="El colectivo de Rosario pierde pasajeros, Nación retiró su aporte y las motos se abaratan frente al boleto. Datos de los estudios de costos del TUP 2019-2025.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,500&family=Public+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -198,14 +198,14 @@
   <div class="frame grid">
     <div>
       <p class="kicker">Pasajeros</p>
-      <h2>El colectivo no recupera pasajeros, y cada vez menos pagan el boleto</h2>
-      <p class="lead">Los pasajeros que pagan, medidos como "pasajeros equivalentes" en el estudio de costos, cayeron <b id="pe-caida">61%</b> desde <span id="pe-desde">junio de 2019</span>.</p>
+      <h2>El colectivo no recupera pasajeros</h2>
+      <p class="lead">Los pasajeros del colectivo, medidos como "pasajeros equivalentes" en el estudio de costos, cayeron <b id="pe-caida">61%</b> desde <span id="pe-desde">junio de 2019</span>.</p>
     </div>
     <div class="card">
       <h3>Pasajeros equivalentes por mes</h3>
       <p class="sub">Según cada estudio de costos del TUP, en millones</p>
       <div class="chart" id="ch-viajes"></div>
-      <p class="note">Pasajeros equivalentes = pasajeros por km × km recorridos de cada estudio. Un viaje con tarifa plena cuenta 1; uno gratis, 0; uno con descuento, la fracción que paga.</p>
+      <p class="note">Pasajeros equivalentes = pasajeros por km × km recorridos de cada estudio.</p>
       <details class="datos"><summary>Ver datos</summary><div class="tw" id="tb-viajes"></div></details>
     </div>
   </div>
@@ -216,8 +216,8 @@
   <div class="frame grid">
     <div>
       <p class="kicker">Costo por pasajero</p>
-      <h2>Menos pasajeros que pagan, boleto más caro</h2>
-      <p class="lead">Entre diciembre de 2023 y diciembre de 2025 el costo por pasajero se multiplicó por <b id="ctp-x">3,5</b>. Un tercio de esa suba se explica por la caída de pasajeros pagos por kilómetro.</p>
+      <h2>Menos pasajeros, boleto más caro</h2>
+      <p class="lead">Entre diciembre de 2023 y diciembre de 2025 el costo por pasajero se multiplicó por <b id="ctp-x">3,5</b>. Un tercio de esa suba se explica por la caída de pasajeros por kilómetro.</p>
       <p>Si se recuperara el índice de diciembre de 2023 (<b id="pckm23">1,48</b> pasajeros por km, hoy <b id="pckm25">0,99</b>), el costo por pasajero sería <b id="red">33%</b> menor.</p>
     </div>
     <div class="card">
@@ -530,6 +530,8 @@ function render() {
   lineChart('ch-viajes', {
     aria: 'Pasajeros equivalentes por mes según los estudios de costos',
     series: [{ n: 'Pasajeros equivalentes', c: '--s1', pts: V.map(r => ({ x: toDate(r.p), y: r.pe })) }],
+    marks: [{ x: toDate('2023-12'), label: 'Uber Moto' }],
+    bands: [{ x0: toDate('2023-12'), x1: toDate('2024-03'), label: 'Tarifazo ×2,9' }],
     yMin: 0, endLabels: true, yFmt: (v, full) => full ? fmtM(v) : nf(0).format(v / 1e6) + ' M',
     tipTitle: (d) => 'Estudio ' + tipMes(d),
   });
