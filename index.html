@@ -166,9 +166,9 @@
 <body>
 <div class="progress" id="progress"></div>
 <div class="topbar">
-  <div><b>TUP Rosario</b><span class="sub-title"> · Estudios de costos 2018-2025</span></div>
+  <div><b>TUP Rosario</b><span class="sub-title"> · Estudios de costos 2019-2025</span></div>
   <div class="controls">
-    <span id="counter">1 / 11</span>
+    <span id="counter">1 / 8</span>
     <button id="prev" aria-label="Slide anterior">&larr;</button>
     <button id="next" aria-label="Slide siguiente">&rarr;</button>
     <button id="theme" aria-label="Cambiar tema">◐</button>
@@ -186,7 +186,7 @@
         <p>El Ejecutivo decidió salir de la inacción tarde, como el técnico que mete un cambio a los 90 minutos perdiendo 5 a 0, con el sistema de taxis ya desdibujado. Que Uber entra y rompe el sistema de taxis no es nuevo. Lo que casi no se discute es cómo las plataformas están afectando al colectivo, y que la situación va camino a ser crítica si no hay un plan.</p>
       </div>
       <div>
-        <p class="quote">¿Menos rosarinos en el colectivo son menos rosarinos reclamándole a la Muni cómo moverse?</p>
+        <p class="quote">La Muni parece cómoda con una mayor privatización del transporte. ¿Menos rosarinos en el colectivo son menos rosarinos reclamándole a la Muni cómo moverse?</p>
         <p class="hint">Usá las flechas del teclado o deslizá para avanzar.</p>
       </div>
     </div>
@@ -199,20 +199,13 @@
     <div>
       <p class="kicker">Pasajeros</p>
       <h2>El colectivo no recupera pasajeros, y cada vez menos pagan el boleto</h2>
-      <ul class="points">
-        <li><b>430.000 viajes por día</b> en 2025, contra 450.000 antes de la pandemia.</li>
-        <li><b>−27.500 viajes diarios</b> interanual en abril de 2025, según datos municipales.</li>
-        <li>Solo <b>3 de cada 10</b> usuarios pagan el boleto completo (eran 3,5 en 2023).</li>
-        <li>Los pasajeros que pagan, medidos como "pasajeros equivalentes" en el estudio de costos, cayeron <b id="pe-caida">65%</b> desde 2018.</li>
-      </ul>
-      <p class="note">El portal de datos abiertos de la Municipalidad publica viajes solo hasta abril de 2024: tiene entre 2 y 5 años de atraso según el dato.</p>
+      <p class="lead">Los pasajeros que pagan, medidos como "pasajeros equivalentes" en el estudio de costos, cayeron <b id="pe-caida">61%</b> desde <span id="pe-desde">junio de 2019</span>.</p>
     </div>
     <div class="card">
-      <h3>Viajes por mes en el TUP</h3>
-      <p class="sub">Promedio de los 12 meses previos a cada estudio de costos, jun-18 a dic-25</p>
-      <div class="legend" id="lg-viajes"></div>
+      <h3>Pasajeros equivalentes por mes</h3>
+      <p class="sub">Según cada estudio de costos del TUP, en millones</p>
       <div class="chart" id="ch-viajes"></div>
-      <p class="note">Viajes reales: validaciones de datos abiertos hasta abr-24; después, estimados (rango entre escenario bajo y alto, ver estimacion.xlsx). Pasajeros equivalentes: PC/KM × km de cada estudio; un viaje gratis pesa 0 y uno con descuento, una fracción.</p>
+      <p class="note">Pasajeros equivalentes = pasajeros por km × km recorridos de cada estudio. Un viaje con tarifa plena cuenta 1; uno gratis, 0; uno con descuento, la fracción que paga.</p>
       <details class="datos"><summary>Ver datos</summary><div class="tw" id="tb-viajes"></div></details>
     </div>
   </div>
@@ -227,72 +220,39 @@
       <p class="lead">Entre diciembre de 2023 y diciembre de 2025 el costo por pasajero se multiplicó por <b id="ctp-x">3,5</b>. Un tercio de esa suba se explica por la caída de pasajeros pagos por kilómetro.</p>
       <p>Si se recuperara el índice de diciembre de 2023 (<b id="pckm23">1,48</b> pasajeros por km, hoy <b id="pckm25">0,99</b>), el costo por pasajero sería <b id="red">33%</b> menor.</p>
     </div>
-    <div>
-      <div class="tiles">
-        <div class="tile"><div class="label">Costo por km, dic-23 a dic-25</div><div class="value" id="t-ctk">×2,36</div><div class="delta">salarios, combustible, insumos</div></div>
-        <div class="tile"><div class="label">Pasajeros pagos por km</div><div class="value" id="t-pckm">÷1,49</div><div class="delta">cada km recorrido se reparte entre menos</div></div>
-      </div>
-      <div class="card">
-        <h3>Con los pasajeros por km de 2023, el boleto podría rondar</h3>
-        <div class="hero" id="t-esc">$1.440 <small>en lugar de $2.150</small></div>
-        <p class="note">Ejercicio sobre el estudio de dic-25: mismo costo por km y mismos subsidios mensuales, con 1,48 pasajeros por km. La reducción se aplica proporcionalmente a la tarifa vigente desde el 5/10/2026.</p>
-      </div>
+    <div class="card">
+      <h3>Con los pasajeros por km de 2023, el boleto podría rondar</h3>
+      <div class="hero" id="t-esc">$1.440 <small>en lugar de $2.150</small></div>
+      <p class="note">Ejercicio sobre el estudio de dic-25: mismo costo por km y mismos subsidios mensuales, con 1,48 pasajeros por km. La reducción se aplica proporcionalmente a la tarifa vigente desde el 5/10/2026.</p>
     </div>
   </div>
 </section>
 
 <!-- 4 -->
 <section class="slide" id="s4">
-  <div class="frame grid">
-    <div>
-      <p class="kicker">Financiamiento</p>
-      <h2>Nación se bajó del colectivo</h2>
-      <p class="lead">En 2018 Nación pagaba el <b id="fn18">28%</b> de cada pasaje. En diciembre de 2023 todavía aportaba el <b id="fn23">11%</b>, unos <b id="fn23m">$663 millones</b> por mes. Desde febrero de 2024 (Decreto 280/2024), nada.</p>
-      <p>Al costo de hoy, ese 11% equivaldría a <b id="fn-eq">$451</b> por pasaje.</p>
-      <div class="tiles">
-        <div class="tile"><div class="label">Boleto en el AMBA (Nación)</div><div class="value">$742,81</div></div>
-        <div class="tile"><div class="label">Boleto en Rosario</div><div class="value">$2.150</div><div class="delta">2,9 veces más caro</div></div>
-      </div>
-      <p class="quote" style="margin-top:4px">¿Dónde está el reclamo de la Muni?</p>
-    </div>
+  <div class="frame">
+    <p class="kicker">Financiamiento</p>
+    <h2>Nación se bajó del colectivo</h2>
     <div class="card">
       <h3>¿Quién paga cada pasaje?</h3>
       <p class="sub">Participación en el costo tarifario por pasajero de cada estudio</p>
       <div class="legend" id="lg-comp"></div>
       <div class="chart" id="ch-comp"></div>
-      <p class="note">Usuario: costo neto a cargo del pasajero. Provincia: Fondo Compensador Provincial + Boleto Educativo Gratuito. Atributo social: compensación de la tarifa social SUBE. Tarifas AMBA y Rosario: Res. 334/2026 de la Secretaría de Movilidad.</p>
+      <p class="note">Usuario: costo neto a cargo del pasajero. Provincia: Fondo Compensador Provincial + Boleto Educativo Gratuito. Atributo social: compensación de la tarifa social SUBE. Nación dejó de aportar en febrero de 2024 (Decreto 280/2024).</p>
       <details class="datos"><summary>Ver datos</summary><div class="tw" id="tb-comp"></div></details>
     </div>
   </div>
 </section>
 
 <!-- 5 -->
-<section class="slide" id="s5">
-  <div class="frame grid">
-    <div>
-      <p class="kicker">Costos</p>
-      <h2>Qué encareció el colectivo</h2>
-      <p class="lead">Casi la mitad del aumento del costo por kilómetro entre diciembre de 2023 y diciembre de 2025 vino de los salarios de los choferes, y uno de cada seis pesos, del combustible.</p>
-      <p>Son costos que dependen de la macroeconomía y de las paritarias. Lo que sí depende de la gestión local es cuántos pasajeros pagan cada kilómetro: ahí está la otra mitad del problema.</p>
-    </div>
-    <div class="card">
-      <h3>Aporte de cada rubro al aumento del costo por km</h3>
-      <p class="sub">Subtotal del costo por km antes de impuestos, dic-23 a dic-25</p>
-      <div class="chart" id="ch-rubros"></div>
-      <details class="datos"><summary>Ver datos</summary><div class="tw" id="tb-rubros"></div></details>
-    </div>
-  </div>
-</section>
-
-<!-- 6 -->
 <section class="slide" id="s6">
   <div class="frame grid">
     <div>
       <p class="kicker">Servicio</p>
       <h2>Menos colectivos en la calle</h2>
       <div class="tiles">
-        <div class="tile"><div class="label">Km recorridos por mes</div><div class="value" id="t-km">−21%</div><div class="delta" id="t-km-d">jun-18 a dic-25</div></div>
-        <div class="tile"><div class="label">Flota total</div><div class="value" id="t-fe" style="white-space:nowrap;font-size:clamp(1.4rem,2.6vw,2rem)">799 → 750</div><div class="delta" id="t-fpe">en servicio: 704 → 636</div></div>
+        <div class="tile"><div class="label">Km recorridos por mes</div><div class="value" id="t-km">−13%</div><div class="delta" id="t-km-d"></div></div>
+        <div class="tile"><div class="label">Flota total</div><div class="value" id="t-fe" style="white-space:nowrap;font-size:clamp(1.4rem,2.6vw,2rem)">809 → 750</div><div class="delta" id="t-fpe"></div></div>
       </div>
       <p class="lead">Menos kilómetros es menos frecuencia: más espera en la parada, menos pasajeros y un costo que se reparte entre menos.</p>
     </div>
@@ -305,14 +265,13 @@
   </div>
 </section>
 
-<!-- 7 -->
+<!-- 6 -->
 <section class="slide" id="s7">
   <div class="frame grid">
     <div>
       <p class="kicker">Motos</p>
       <h2>Los que se bajan del colectivo se suben a la moto</h2>
-      <p class="lead">Los patentamientos de motos en Santa Fe crecieron <b id="pat-x">65%</b> desde abril de 2024, después del tarifazo y de la llegada de Uber Moto.</p>
-      <p class="note">Dato provincial: no hay apertura pública por ciudad.</p>
+      <p class="lead">Los patentamientos de motos en Santa Fe crecieron <b id="pat-x">61%</b> entre <span id="pat-desde">diciembre de 2021</span> y <span id="pat-hasta">junio de 2026</span>.</p>
     </div>
     <div class="card">
       <h3>Patentamientos de motos en Santa Fe</h3>
@@ -323,31 +282,31 @@
   </div>
 </section>
 
-<!-- 8 -->
+<!-- 7 -->
 <section class="slide" id="s8">
   <div class="frame grid">
     <div>
       <p class="kicker">Precios relativos</p>
       <h2>La moto, cada vez más barata en boletos</h2>
-      <p class="lead">En enero de 2024 la moto más vendida, la Honda Wave 110S, costaba <b id="bol-max">5.617</b> boletos. Hoy cuesta <b id="bol-last">1.992</b>: la mitad que en 2023.</p>
-      <p>Para quien viaja ida y vuelta todos los días hábiles, la moto cuesta lo mismo que <b id="bol-anios">4 años</b> de boletos, sin contar combustible ni patente.</p>
+      <p class="lead">En <span id="bol-p0">febrero de 2023</span> la moto más vendida, la Honda Wave 110S, costaba <b id="bol-v0">3.990</b> boletos de colectivo. En <span id="bol-p1">abril de 2026</span> cuesta <b id="bol-v1">1.992</b>: la mitad.</p>
+      <p>Para quien viaja ida y vuelta todos los días hábiles, la moto cuesta lo mismo que <b id="bol-anios">3,8 años</b> de boletos, sin contar combustible ni patente.</p>
     </div>
     <div class="card">
-      <h3>Boletos de colectivo para comprar una Honda Wave 110S</h3>
-      <p class="sub">Precio de lista / tarifa básica vigente</p>
+      <h3>¿Cuántos boletos de TUP se necesitan para comprar la moto más vendida?</h3>
+      <p class="sub">Honda Wave 110S: precio de lista / tarifa básica vigente</p>
       <div class="chart" id="ch-moto"></div>
       <details class="datos"><summary>Ver datos</summary><div class="tw" id="tb-moto"></div></details>
     </div>
   </div>
 </section>
 
-<!-- 9 -->
+<!-- 8 -->
 <section class="slide" id="s9">
   <div class="frame grid">
     <div>
-      <p class="kicker">El proyecto Uber</p>
+      <p class="kicker">Habilitación a Uber</p>
       <h2>El proyecto reconoce el problema, pero no trae un plan</h2>
-      <p class="lead">El proyecto del Ejecutivo fija una tarifa mínima igual a un boleto de colectivo y exige vehículos de 4 puertas, lo que deja afuera a las motos. El Ejecutivo sabe que hay una tensión con el TUP.</p>
+      <p class="lead">El proyecto del Ejecutivo para habilitar Uber y otras aplicaciones fija una <b>tarifa mínima igual a un boleto de colectivo</b> y exige vehículos de 4 puertas, lo que <b>deja afuera a las motos</b>. El Ejecutivo sabe que hay una tensión con el TUP.</p>
       <p>Pero no dice cómo frenar la caída de pasajeros ni cómo salir del círculo vicioso que encarece el boleto.</p>
     </div>
     <div class="card" style="display:flex;justify-content:center">
@@ -377,46 +336,10 @@
   </div>
 </section>
 
-<!-- 10 -->
-<section class="slide" id="s10">
-  <div class="frame">
-    <p class="kicker">Propuestas</p>
-    <h2>Qué hace falta para romper el círculo</h2>
-    <div class="grid even" style="align-items:start">
-      <ul class="points">
-        <li><b>Datos abiertos al día:</b> viajes mensuales y por tipo de boleto, publicados todos los meses.</li>
-        <li><b>Reclamo federal conjunto con la Provincia</b> por la restitución del Fondo Compensador al interior.</li>
-      </ul>
-      <ul class="points">
-        <li><b>Prioridad al colectivo en la calle:</b> carriles exclusivos y frecuencias que vuelvan a hacerlo competitivo frente a la moto.</li>
-        <li><b>Integrar las plataformas al sistema</b> en lugar de competir contra el TUP.</li>
-      </ul>
-    </div>
-  </div>
-</section>
-
-<!-- 11 -->
-<section class="slide" id="s11">
-  <div class="frame">
-    <p class="kicker">Fuentes y metodología</p>
-    <h2>De dónde salen los datos</h2>
-    <ol class="sources">
-      <li>Estudios de costos del TUP elevados por el Ente de la Movilidad al Concejo Municipal, jun-2018 a dic-2025 (38 estudios), con la metodología de la Ordenanza 7802/2004.</li>
-      <li>Resoluciones tarifarias de la Secretaría de Movilidad 2021-2026 (Res. 334/2026 para la tarifa vigente y la comparación con el AMBA).</li>
-      <li>Validaciones mensuales del TUP: datosabiertos.rosario.gob.ar (2015-2021) y datos.rosario.gob.ar (2021-abr 2024).</li>
-      <li>Viajes diarios, usuarios que pagan tarifa plena y participación del Boleto Educativo: datos de Movilidad municipal publicados por La Capital (23/06/2025 y 25/01/2026).</li>
-      <li>Res. 14/2021 de la Secretaría de Transporte de Santa Fe (compensación del Boleto Educativo Gratuito) y Decreto nacional 280/2024 (fin del Fondo Compensador del interior).</li>
-      <li>Patentamientos de motos en Santa Fe y precios de lista de la Honda Wave 110S (concesionarias y prensa).</li>
-      <li>Viajes reales posteriores a abr-24: estimación propia (estimacion.xlsx), con escenario bajo y alto.</li>
-    </ol>
-    <p class="byline">Elaboración propia · Octubre 2026</p>
-  </div>
-</section>
-
 <div class="tip" id="tip"></div>
 
 <script>
-const DATA = {"viajes": [{"p": "2018-06", "pe": 9791479, "real": 11342215, "bajo": 11342215, "est": false}, {"p": "2018-08", "pe": 9791479, "real": 11223899, "bajo": 11223899, "est": false}, {"p": "2018-10", "pe": 9521462, "real": 11069158, "bajo": 11069158, "est": false}, {"p": "2019-02", "pe": 9283473, "real": 10631779, "bajo": 10631779, "est": false}, {"p": "2019-04", "pe": 8975988, "real": 10449346, "bajo": 10449346, "est": false}, {"p": "2019-06", "pe": 8720815, "real": 10168811, "bajo": 10168811, "est": false}, {"p": "2020-02", "pe": 8010770, "real": 9752135, "bajo": 9752135, "est": false}, {"p": "2020-04", "pe": 7109736, "real": 9812360, "bajo": 9812360, "est": false}, {"p": "2020-06", "pe": 5862558, "real": 8795518, "bajo": 8795518, "est": false}, {"p": "2020-08", "pe": 4641392, "real": 7298712, "bajo": 7298712, "est": false}, {"p": "2020-10", "pe": 3451738, "real": 5805343, "bajo": 5805343, "est": false}, {"p": "2020-12", "pe": 2553456, "real": 4319650, "bajo": 4319650, "est": false}, {"p": "2021-02", "pe": 1973306, "real": 3174692, "bajo": 3174692, "est": false}, {"p": "2021-04", "pe": 2154612, "real": 2457715, "bajo": 2457715, "est": false}, {"p": "2021-06", "pe": 2407446, "real": 2749238, "bajo": 2749238, "est": false}, {"p": "2021-08", "pe": 2937882, "real": 3116130, "bajo": 3116130, "est": false}, {"p": "2021-10", "pe": 3550188, "real": 3863254, "bajo": 3863254, "est": false}, {"p": "2021-12", "pe": 4074807, "real": 4718033, "bajo": 4718033, "est": false}, {"p": "2022-02", "pe": 4134444, "real": 5436492, "bajo": 5436492, "est": false}, {"p": "2022-04", "pe": 4282415, "real": 5661056, "bajo": 5661056, "est": false}, {"p": "2022-06", "pe": 4771726, "real": 6086552, "bajo": 6086552, "est": false}, {"p": "2022-12", "pe": 5338805, "real": 7624836, "bajo": 7624836, "est": false}, {"p": "2023-02", "pe": 5493092, "real": 7826836, "bajo": 7826836, "est": false}, {"p": "2023-04", "pe": 5462184, "real": 8084710, "bajo": 8084710, "est": false}, {"p": "2023-06", "pe": 5341493, "real": 8310625, "bajo": 8310625, "est": false}, {"p": "2023-08", "pe": 5293405, "real": 8491129, "bajo": 8491129, "est": false}, {"p": "2023-10", "pe": 5271807, "real": 8690988, "bajo": 8690988, "est": false}, {"p": "2023-12", "pe": 5169371, "real": 8964690, "bajo": 8964690, "est": false}, {"p": "2024-02", "pe": 5124388, "real": 9086623, "bajo": 9086623, "est": false}, {"p": "2024-04", "pe": 4900254, "real": 9194457, "bajo": 9194457, "est": false}, {"p": "2024-06", "pe": 4646566, "real": 8921927, "bajo": 8921927, "est": false}, {"p": "2024-08", "pe": 4426270, "real": 8961540, "bajo": 8674815, "est": true}, {"p": "2024-10", "pe": 4186779, "real": 9001802, "bajo": 8399642, "est": true}, {"p": "2024-12", "pe": 3972626, "real": 9041415, "bajo": 8161993, "est": true}, {"p": "2025-02", "pe": 3778365, "real": 9081028, "bajo": 7954990, "est": true}, {"p": "2025-04", "pe": 3812292, "real": 9120641, "bajo": 7994730, "est": true}, {"p": "2025-06", "pe": 3718490, "real": 9159605, "bajo": 7836176, "est": true}, {"p": "2025-12", "pe": 3427371, "real": 9278444, "bajo": 7344849, "est": true}], "escenario": {"ctp23": 1164.1871, "ctp25": 4098.0198, "ctk_x": 2.356470638294508, "pckm_x": 1.4938334007278609, "ctp_x": 3.520069755110669, "pckm23": 1.4777, "pckm25": 0.9892, "reduccion": 0.33058130879068826, "tarifa": 2150, "tarifa_esc": 1439.2501861000203, "total25": 1898.4257, "total_esc": 1270.8416474521216}, "composicion": [{"p": "2018-06", "usuario": 0.573812593296241, "municipio": 0.11929705523137468, "provincia": 0.03106255937033519, "nacion": 0.27582779210204916, "social": 0.0}, {"p": "2020-02", "usuario": 0.672359217848573, "municipio": 0.07773012712513402, "provincia": 0.07280070293669538, "nacion": 0.17710995208959757, "social": 0.0}, {"p": "2022-12", "usuario": 0.4367630917692303, "municipio": 0.15726722846548705, "provincia": 0.19784042020557557, "nacion": 0.20812892421081505, "social": 0.0}, {"p": "2023-12", "usuario": 0.577007424322087, "municipio": 0.12799952859810934, "provincia": 0.14475044432290993, "nacion": 0.11014896145129936, "social": 0.04009364130559426}, {"p": "2025-12", "usuario": 0.419234748450947, "municipio": 0.16168013634292347, "provincia": 0.2902535512395523, "nacion": 0.0, "social": 0.12883153956454774}], "nacion": {"fn18": 0.27582779210204916, "fn23": 0.11014896145129936, "fn23_mes": 662889173.8387591, "equiv25": 451.39262497686155, "equiv25_pct": 0.23777207871599165, "amba": 742.81, "rosario": 2150}, "rubros": [{"k": "X1", "n": "Conducción (salarios de choferes)", "v": 0.4420308890609604}, {"k": "X2", "n": "Combustible", "v": 0.17322116924247374}, {"k": "X6", "n": "Personal administrativo y playa", "v": 0.12728802534061287}, {"k": "X9", "n": "Amortización de unidades", "v": 0.061659446315946546}, {"k": "RCF", "n": "Renta sobre el capital", "v": 0.05730044243129255}, {"k": "X7", "n": "Gastos generales", "v": 0.0521599334676267}, {"k": "X5", "n": "Mantenimiento y reparaciones", "v": 0.04201363196222688}, {"k": "resto", "n": "Resto de los rubros", "v": 0.04432646217886038}], "km": [{"p": "2018-06", "km": 4363404, "fe": 799, "fpe": 704}, {"p": "2018-08", "km": 4363404, "fe": 799, "fpe": 704}, {"p": "2018-10", "km": 4341554, "fe": 801, "fpe": 702}, {"p": "2019-02", "km": 4157958, "fe": 806, "fpe": 701}, {"p": "2019-04", "km": 4084822, "fe": 804, "fpe": 699}, {"p": "2019-06", "km": 4003496, "fe": 809, "fpe": 693}, {"p": "2020-02", "km": 3910554, "fe": 799, "fpe": 686}, {"p": "2020-04", "km": 3740982, "fe": 800, "fpe": 657}, {"p": "2020-06", "km": 3335927, "fe": 798, "fpe": 604}, {"p": "2020-08", "km": 2842945, "fe": 786, "fpe": 560}, {"p": "2020-10", "km": 2457278, "fe": 769, "fpe": 508}, {"p": "2020-12", "km": 2142700, "fe": 751, "fpe": 461}, {"p": "2021-02", "km": 1997071, "fe": 733, "fpe": 441}, {"p": "2021-04", "km": 2029589, "fe": 717, "fpe": 444}, {"p": "2021-06", "km": 2205025, "fe": 701, "fpe": 468}, {"p": "2021-08", "km": 2486149, "fe": 697, "fpe": 484}, {"p": "2021-10", "km": 2734279, "fe": 700, "fpe": 511}, {"p": "2021-12", "km": 2947419, "fe": 702, "fpe": 539}, {"p": "2022-02", "km": 2960576, "fe": 702, "fpe": 540}, {"p": "2022-04", "km": 2979071, "fe": 702, "fpe": 550}, {"p": "2022-06", "km": 3129206, "fe": 706, "fpe": 566}, {"p": "2022-12", "km": 3279364, "fe": 718, "fpe": 607}, {"p": "2023-02", "km": 3331974, "fe": 725, "fpe": 619}, {"p": "2023-04", "km": 3380483, "fe": 733, "fpe": 629}, {"p": "2023-06", "km": 3377699, "fe": 739, "fpe": 635}, {"p": "2023-08", "km": 3390383, "fe": 747, "fpe": 642}, {"p": "2023-10", "km": 3460099, "fe": 752, "fpe": 647}, {"p": "2023-12", "km": 3498255, "fe": 756, "fpe": 650}, {"p": "2024-02", "km": 3515393, "fe": 758, "fpe": 646}, {"p": "2024-04", "km": 3452342, "fe": 757, "fpe": 643}, {"p": "2024-06", "km": 3464484, "fe": 755, "fpe": 637}, {"p": "2024-08", "km": 3494332, "fe": 752, "fpe": 633}, {"p": "2024-10", "km": 3472200, "fe": 749, "fpe": 628}, {"p": "2024-12", "km": 3452956, "fe": 747, "fpe": 623}, {"p": "2025-02", "km": 3443329, "fe": 745, "fpe": 622}, {"p": "2025-04", "km": 3506846, "fe": 744, "fpe": 621}, {"p": "2025-06", "km": 3500085, "fe": 747, "fpe": 623}, {"p": "2025-12", "km": 3464791, "fe": 750, "fpe": 636}], "motos_pat": [{"p": "2021-12", "v": 47631}, {"p": "2022-01", "v": 48634}, {"p": "2022-02", "v": 50026}, {"p": "2022-03", "v": 50893}, {"p": "2022-04", "v": 51693}, {"p": "2022-05", "v": 53819}, {"p": "2022-06", "v": 54096}, {"p": "2022-07", "v": 54412}, {"p": "2022-08", "v": 53916}, {"p": "2022-09", "v": 52772}, {"p": "2022-10", "v": 51837}, {"p": "2022-11", "v": 51010}, {"p": "2022-12", "v": 50290}, {"p": "2023-01", "v": 50553}, {"p": "2023-02", "v": 50121}, {"p": "2023-03", "v": 50033}, {"p": "2023-04", "v": 49536}, {"p": "2023-05", "v": 48979}, {"p": "2023-06", "v": 48021}, {"p": "2023-07", "v": 47311}, {"p": "2023-08", "v": 47893}, {"p": "2023-09", "v": 47741}, {"p": "2023-10", "v": 49004}, {"p": "2023-11", "v": 49628}, {"p": "2023-12", "v": 50110}, {"p": "2024-01", "v": 49198}, {"p": "2024-02", "v": 48472}, {"p": "2024-03", "v": 46693}, {"p": "2024-04", "v": 46406}, {"p": "2024-05", "v": 46261}, {"p": "2024-06", "v": 46638}, {"p": "2024-07", "v": 47215}, {"p": "2024-08", "v": 48906}, {"p": "2024-09", "v": 49657}, {"p": "2024-10", "v": 50224}, {"p": "2024-11", "v": 51205}, {"p": "2024-12", "v": 53127}, {"p": "2025-01", "v": 55609}, {"p": "2025-02", "v": 56600}, {"p": "2025-03", "v": 59030}, {"p": "2025-04", "v": 60995}, {"p": "2025-05", "v": 62133}, {"p": "2025-06", "v": 62924}, {"p": "2025-07", "v": 64069}, {"p": "2025-08", "v": 63313}, {"p": "2025-09", "v": 64332}, {"p": "2025-10", "v": 64849}, {"p": "2025-11", "v": 64489}, {"p": "2025-12", "v": 64752}, {"p": "2026-01", "v": 65439}, {"p": "2026-02", "v": 68379}, {"p": "2026-03", "v": 70768}, {"p": "2026-04", "v": 72851}, {"p": "2026-05", "v": 74231}, {"p": "2026-06", "v": 76674}], "boletos_moto": [{"p": "2023-02", "precio": 395000, "tarifa": 99, "v": 3990}, {"p": "2023-09", "precio": 513500, "tarifa": 120, "v": 4279}, {"p": "2023-10", "precio": 513500, "tarifa": 185, "v": 2776}, {"p": "2024-01", "precio": 1348000, "tarifa": 240, "v": 5617}, {"p": "2024-02", "precio": 1489700, "tarifa": 340, "v": 4381}, {"p": "2024-03", "precio": 1638400, "tarifa": 700, "v": 2341}, {"p": "2024-05", "precio": 2073400, "tarifa": 700, "v": 2962}, {"p": "2024-06", "precio": 2098300, "tarifa": 940, "v": 2232}, {"p": "2024-08", "precio": 2313400, "tarifa": 940, "v": 2461}, {"p": "2024-09", "precio": 2475300, "tarifa": 940, "v": 2633}, {"p": "2024-10", "precio": 2574300, "tarifa": 1200, "v": 2145}, {"p": "2025-01", "precio": 2783000, "tarifa": 1200, "v": 2319}, {"p": "2025-02", "precio": 2921900, "tarifa": 1200, "v": 2435}, {"p": "2025-05", "precio": 3229600, "tarifa": 1200, "v": 2691}, {"p": "2025-06", "precio": 3229600, "tarifa": 1200, "v": 2691}, {"p": "2025-07", "precio": 3229600, "tarifa": 1200, "v": 2691}, {"p": "2025-08", "precio": 3294200, "tarifa": 1580, "v": 2085}, {"p": "2025-09", "precio": 3294200, "tarifa": 1580, "v": 2085}, {"p": "2025-10", "precio": 3294200, "tarifa": 1580, "v": 2085}, {"p": "2025-11", "precio": 3294200, "tarifa": 1580, "v": 2085}, {"p": "2025-12", "precio": 3294200, "tarifa": 1580, "v": 2085}, {"p": "2026-01", "precio": 3327100, "tarifa": 1580, "v": 2106}, {"p": "2026-04", "precio": 3426900, "tarifa": 1720, "v": 1992}, {"p": "2026-06", "precio": 3426900, "tarifa": 1720, "v": 1992}, {"p": "2026-07", "precio": 3426900, "tarifa": 1720, "v": 1992}, {"p": "2026-08", "precio": 3426900, "tarifa": 1720, "v": 1992}]};
+const DATA = {"viajes": [{"p": "2019-06", "pe": 8720815}, {"p": "2020-02", "pe": 8010770}, {"p": "2020-04", "pe": 7109736}, {"p": "2020-06", "pe": 5862558}, {"p": "2020-08", "pe": 4641392}, {"p": "2020-10", "pe": 3451738}, {"p": "2020-12", "pe": 2553456}, {"p": "2021-02", "pe": 1973306}, {"p": "2021-04", "pe": 2154612}, {"p": "2021-06", "pe": 2407446}, {"p": "2021-08", "pe": 2937882}, {"p": "2021-10", "pe": 3550188}, {"p": "2021-12", "pe": 4074807}, {"p": "2022-02", "pe": 4134444}, {"p": "2022-04", "pe": 4282415}, {"p": "2022-06", "pe": 4771726}, {"p": "2022-12", "pe": 5338805}, {"p": "2023-02", "pe": 5493092}, {"p": "2023-04", "pe": 5462184}, {"p": "2023-06", "pe": 5341493}, {"p": "2023-08", "pe": 5293405}, {"p": "2023-10", "pe": 5271807}, {"p": "2023-12", "pe": 5169371}, {"p": "2024-02", "pe": 5124388}, {"p": "2024-04", "pe": 4900254}, {"p": "2024-06", "pe": 4646566}, {"p": "2024-08", "pe": 4426270}, {"p": "2024-10", "pe": 4186779}, {"p": "2024-12", "pe": 3972626}, {"p": "2025-02", "pe": 3778365}, {"p": "2025-04", "pe": 3812292}, {"p": "2025-06", "pe": 3718490}, {"p": "2025-12", "pe": 3427371}], "escenario": {"ctp23": 1164.1871, "ctp25": 4098.0198, "ctk_x": 2.356470638294508, "pckm_x": 1.4938334007278609, "ctp_x": 3.520069755110669, "pckm23": 1.4777, "pckm25": 0.9892, "reduccion": 0.33058130879068826, "tarifa": 2150, "tarifa_esc": 1439.2501861000203, "total25": 1898.4257, "total_esc": 1270.8416474521216}, "composicion": [{"p": "2019-06", "usuario": 0.6610934501254859, "municipio": 0.1323064809802667, "provincia": 0.12294276856453915, "nacion": 0.08365730032970818, "social": 0.0}, {"p": "2020-02", "usuario": 0.672359217848573, "municipio": 0.07773012712513402, "provincia": 0.07280070293669538, "nacion": 0.17710995208959757, "social": 0.0}, {"p": "2022-12", "usuario": 0.4367630917692303, "municipio": 0.15726722846548705, "provincia": 0.19784042020557557, "nacion": 0.20812892421081505, "social": 0.0}, {"p": "2023-12", "usuario": 0.577007424322087, "municipio": 0.12799952859810934, "provincia": 0.14475044432290993, "nacion": 0.11014896145129936, "social": 0.04009364130559426}, {"p": "2025-12", "usuario": 0.419234748450947, "municipio": 0.16168013634292347, "provincia": 0.2902535512395523, "nacion": 0.0, "social": 0.12883153956454774}], "nacion": {"fn18": 0.27582779210204916, "fn23": 0.11014896145129936, "fn23_mes": 662889173.8387591, "equiv25": 451.39262497686155, "equiv25_pct": 0.23777207871599165, "amba": 742.81, "rosario": 2150}, "km": [{"p": "2019-06", "km": 4003496, "fe": 809, "fpe": 693}, {"p": "2020-02", "km": 3910554, "fe": 799, "fpe": 686}, {"p": "2020-04", "km": 3740982, "fe": 800, "fpe": 657}, {"p": "2020-06", "km": 3335927, "fe": 798, "fpe": 604}, {"p": "2020-08", "km": 2842945, "fe": 786, "fpe": 560}, {"p": "2020-10", "km": 2457278, "fe": 769, "fpe": 508}, {"p": "2020-12", "km": 2142700, "fe": 751, "fpe": 461}, {"p": "2021-02", "km": 1997071, "fe": 733, "fpe": 441}, {"p": "2021-04", "km": 2029589, "fe": 717, "fpe": 444}, {"p": "2021-06", "km": 2205025, "fe": 701, "fpe": 468}, {"p": "2021-08", "km": 2486149, "fe": 697, "fpe": 484}, {"p": "2021-10", "km": 2734279, "fe": 700, "fpe": 511}, {"p": "2021-12", "km": 2947419, "fe": 702, "fpe": 539}, {"p": "2022-02", "km": 2960576, "fe": 702, "fpe": 540}, {"p": "2022-04", "km": 2979071, "fe": 702, "fpe": 550}, {"p": "2022-06", "km": 3129206, "fe": 706, "fpe": 566}, {"p": "2022-12", "km": 3279364, "fe": 718, "fpe": 607}, {"p": "2023-02", "km": 3331974, "fe": 725, "fpe": 619}, {"p": "2023-04", "km": 3380483, "fe": 733, "fpe": 629}, {"p": "2023-06", "km": 3377699, "fe": 739, "fpe": 635}, {"p": "2023-08", "km": 3390383, "fe": 747, "fpe": 642}, {"p": "2023-10", "km": 3460099, "fe": 752, "fpe": 647}, {"p": "2023-12", "km": 3498255, "fe": 756, "fpe": 650}, {"p": "2024-02", "km": 3515393, "fe": 758, "fpe": 646}, {"p": "2024-04", "km": 3452342, "fe": 757, "fpe": 643}, {"p": "2024-06", "km": 3464484, "fe": 755, "fpe": 637}, {"p": "2024-08", "km": 3494332, "fe": 752, "fpe": 633}, {"p": "2024-10", "km": 3472200, "fe": 749, "fpe": 628}, {"p": "2024-12", "km": 3452956, "fe": 747, "fpe": 623}, {"p": "2025-02", "km": 3443329, "fe": 745, "fpe": 622}, {"p": "2025-04", "km": 3506846, "fe": 744, "fpe": 621}, {"p": "2025-06", "km": 3500085, "fe": 747, "fpe": 623}, {"p": "2025-12", "km": 3464791, "fe": 750, "fpe": 636}], "motos_pat": [{"p": "2021-12", "v": 47631}, {"p": "2022-01", "v": 48634}, {"p": "2022-02", "v": 50026}, {"p": "2022-03", "v": 50893}, {"p": "2022-04", "v": 51693}, {"p": "2022-05", "v": 53819}, {"p": "2022-06", "v": 54096}, {"p": "2022-07", "v": 54412}, {"p": "2022-08", "v": 53916}, {"p": "2022-09", "v": 52772}, {"p": "2022-10", "v": 51837}, {"p": "2022-11", "v": 51010}, {"p": "2022-12", "v": 50290}, {"p": "2023-01", "v": 50553}, {"p": "2023-02", "v": 50121}, {"p": "2023-03", "v": 50033}, {"p": "2023-04", "v": 49536}, {"p": "2023-05", "v": 48979}, {"p": "2023-06", "v": 48021}, {"p": "2023-07", "v": 47311}, {"p": "2023-08", "v": 47893}, {"p": "2023-09", "v": 47741}, {"p": "2023-10", "v": 49004}, {"p": "2023-11", "v": 49628}, {"p": "2023-12", "v": 50110}, {"p": "2024-01", "v": 49198}, {"p": "2024-02", "v": 48472}, {"p": "2024-03", "v": 46693}, {"p": "2024-04", "v": 46406}, {"p": "2024-05", "v": 46261}, {"p": "2024-06", "v": 46638}, {"p": "2024-07", "v": 47215}, {"p": "2024-08", "v": 48906}, {"p": "2024-09", "v": 49657}, {"p": "2024-10", "v": 50224}, {"p": "2024-11", "v": 51205}, {"p": "2024-12", "v": 53127}, {"p": "2025-01", "v": 55609}, {"p": "2025-02", "v": 56600}, {"p": "2025-03", "v": 59030}, {"p": "2025-04", "v": 60995}, {"p": "2025-05", "v": 62133}, {"p": "2025-06", "v": 62924}, {"p": "2025-07", "v": 64069}, {"p": "2025-08", "v": 63313}, {"p": "2025-09", "v": 64332}, {"p": "2025-10", "v": 64849}, {"p": "2025-11", "v": 64489}, {"p": "2025-12", "v": 64752}, {"p": "2026-01", "v": 65439}, {"p": "2026-02", "v": 68379}, {"p": "2026-03", "v": 70768}, {"p": "2026-04", "v": 72851}, {"p": "2026-05", "v": 74231}, {"p": "2026-06", "v": 76674}], "boletos_moto": [{"p": "2023-02", "v": 3990}, {"p": "2024-02", "v": 4381}, {"p": "2025-02", "v": 2435}, {"p": "2026-04", "v": 1992}]};
 
 /* ---------- utilidades ---------- */
 const nf = (d) => new Intl.NumberFormat('es-AR', { maximumFractionDigits: d, minimumFractionDigits: d });
@@ -457,7 +380,7 @@ function lineChart(id, o) {
   const box = document.getElementById(id);
   box.innerHTML = '';
   const W = Math.max(300, box.clientWidth), H = Math.round(Math.min(380, Math.max(240, W * 0.6)));
-  const m = { t: 14, r: o.endLabels ? 74 : 16, b: 28, l: o.yLabelW || 52 };
+  const m = { t: o.pointLabels ? 26 : 14, r: o.endLabels ? 74 : (o.padX || 16), b: 28, l: o.yLabelW || 52 };
   const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': o.aria || '' }, box);
   const all = o.series.flatMap(s => s.pts);
   const xs = all.map(p => p.x.getTime());
@@ -475,13 +398,17 @@ function lineChart(id, o) {
     const t = el('text', { x: z + 4, y: m.t + 12, 'font-size': 11, fill: 'var(--ink-secondary)' }, svg); t.textContent = b.label;
   });
   // grilla
-  ticks.forEach(v => {
+  if (!o.noGrid) ticks.forEach(v => {
     el('line', { x1: m.l, x2: W - m.r, y1: Y(v), y2: Y(v), stroke: 'var(--line)', 'stroke-width': 1 }, svg);
     const t = el('text', { x: m.l - 8, y: Y(v) + 4, 'text-anchor': 'end', 'font-size': 11, fill: 'var(--ink-muted)' }, svg);
     t.textContent = o.yFmt(v);
   });
-  // eje x: anios
-  const yA = new Date(x0).getFullYear(), yB = new Date(x1).getFullYear();
+  // eje x
+  if (o.xAtPoints) all.forEach(p => {
+    const t = el('text', { x: X(p.x), y: H - 8, 'text-anchor': 'middle', 'font-size': 11.5, fill: 'var(--ink-muted)' }, svg);
+    t.textContent = o.xAtPoints(p.x);
+  });
+  const yA = o.xAtPoints ? 1e9 : new Date(x0).getFullYear(), yB = new Date(x1).getFullYear();
   const stepY = (yB - yA) > 6 ? 2 : 1;
   for (let y = yA; y <= yB; y += stepY) {
     const d = new Date(y, 0, 1); if (d.getTime() < x0) continue;
@@ -510,6 +437,10 @@ function lineChart(id, o) {
     if (s.dots) s.pts.forEach(p => el('circle', { cx: X(p.x), cy: Y(p.y), r: 3.5, fill: `var(${s.c})`, stroke: 'var(--surface)', 'stroke-width': 2 }, svg));
     const last = s.pts[s.pts.length - 1];
     el('circle', { cx: X(last.x), cy: Y(last.y), r: 4.5, fill: `var(${s.c})`, stroke: 'var(--surface)', 'stroke-width': 2 }, svg);
+    if (o.pointLabels) s.pts.forEach(p => {
+      const t = el('text', { x: X(p.x), y: Y(p.y) - 12, 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 600, fill: 'var(--ink)' }, svg);
+      t.textContent = o.yFmt(p.y, true);
+    });
     if (o.endLabels) {
       const t = el('text', { x: X(last.x) + 8, y: Y(last.y) + 4, 'font-size': 12, 'font-weight': 600, fill: 'var(--ink)' }, svg);
       t.textContent = o.yFmt(last.y, true);
@@ -586,91 +517,84 @@ function hbars(id, items) {
 }
 
 /* ---------- armado ---------- */
+const MESL = ['enero','febrero','marzo','abril','mayo','junio','julio','agosto','septiembre','octubre','noviembre','diciembre'];
+const largo = (p) => { const [y, m] = p.split('-').map(Number); return MESL[m - 1] + ' de ' + y; };
+const tipMes = (d) => MES[d.getMonth()] + '-' + String(d.getFullYear()).slice(2);
+
 function render() {
+  // 2. pasajeros equivalentes
   const V = DATA.viajes;
   const first = V[0], last = V[V.length - 1];
   document.getElementById('pe-caida').textContent = fmtPct(1 - last.pe / first.pe);
-  legend('lg-viajes', [{ n: 'Viajes reales', c: '--s1' }, { n: 'Pasajeros equivalentes (los que pagan)', c: '--s2' }, { n: 'Estimado', c: '--ink-muted', dash: true }]);
+  document.getElementById('pe-desde').textContent = largo(first.p);
   lineChart('ch-viajes', {
-    aria: 'Viajes reales y pasajeros equivalentes por mes, 2018 a 2025',
-    series: [
-      { n: 'Viajes reales', c: '--s1', pts: V.map(r => ({ x: toDate(r.p), y: r.real, est: r.est })) },
-      { n: 'Pasajeros equivalentes', c: '--s2', pts: V.map(r => ({ x: toDate(r.p), y: r.pe })) },
-    ],
-    range: V.filter((r, i, a) => r.est || (a[i + 1] && a[i + 1].est)).map(r => ({ x: toDate(r.p), lo: r.bajo, hi: r.real })),
-    marks: [{ x: toDate('2023-12'), label: 'Uber Moto' }],
-    bands: [{ x0: toDate('2023-12'), x1: toDate('2024-03'), label: 'Boleto ×2,9' }],
+    aria: 'Pasajeros equivalentes por mes según los estudios de costos',
+    series: [{ n: 'Pasajeros equivalentes', c: '--s1', pts: V.map(r => ({ x: toDate(r.p), y: r.pe })) }],
     yMin: 0, endLabels: true, yFmt: (v, full) => full ? fmtM(v) : nf(0).format(v / 1e6) + ' M',
-    tipTitle: (d) => 'Estudio ' + MES[d.getMonth()] + '-' + String(d.getFullYear()).slice(2),
-    tipExtra: (k) => { const r = V.find(q => toDate(q.p).getTime() === k); return r && r.est ? `<div class="r"><span>Rango estimado</span><b>${fmtM(r.bajo)} a ${fmtM(r.real)}</b></div>` : ''; },
+    tipTitle: (d) => 'Estudio ' + tipMes(d),
   });
-  table('tb-viajes', ['Estudio', 'Viajes reales/mes', 'Escenario bajo', 'Pasajeros equivalentes/mes'],
-    V.map(r => [lab(r.p) + (r.est ? ' (est.)' : ''), fmtInt(r.real), r.est ? fmtInt(r.bajo) : '', fmtInt(r.pe)]));
+  table('tb-viajes', ['Estudio', 'Pasajeros equivalentes/mes'], V.map(r => [lab(r.p), fmtInt(r.pe)]));
 
+  // 3. escenario
   const E = DATA.escenario;
   document.getElementById('ctp-x').textContent = nf(1).format(E.ctp_x);
   document.getElementById('pckm23').textContent = nf(2).format(E.pckm23);
   document.getElementById('pckm25').textContent = nf(2).format(E.pckm25);
   document.getElementById('red').textContent = fmtPct(E.reduccion);
-  document.getElementById('t-ctk').textContent = '×' + nf(2).format(E.ctk_x);
-  document.getElementById('t-pckm').textContent = '÷' + nf(2).format(E.pckm_x);
   document.getElementById('t-esc').innerHTML = '$' + fmtInt(Math.round(E.tarifa_esc / 10) * 10) + ' <small>en lugar de $' + fmtInt(E.tarifa) + '</small>';
 
-  const N = DATA.nacion;
-  document.getElementById('fn18').textContent = fmtPct(N.fn18);
-  document.getElementById('fn23').textContent = fmtPct(N.fn23);
-  document.getElementById('fn23m').textContent = '$' + fmtInt(N.fn23_mes / 1e6) + ' millones';
-  document.getElementById('fn-eq').textContent = '$' + fmtInt(N.equiv25);
+  // 4. quien paga
   const K = [{ k: 'usuario', n: 'Usuario', c: '--s1', dark: true }, { k: 'municipio', n: 'Municipio', c: '--s2' },
              { k: 'provincia', n: 'Provincia', c: '--s3' }, { k: 'nacion', n: 'Nación', c: '--s4' }, { k: 'social', n: 'Atributo social', c: '--s5' }];
   legend('lg-comp', K.map(k => ({ n: k.n, c: k.c, sq: true })));
   stacked('ch-comp', DATA.composicion, K);
   table('tb-comp', ['Estudio'].concat(K.map(k => k.n)), DATA.composicion.map(r => [lab(r.p)].concat(K.map(k => fmtPct(r[k.k], 1)))));
 
-  hbars('ch-rubros', DATA.rubros);
-  table('tb-rubros', ['Rubro', 'Aporte al aumento'], DATA.rubros.map(r => [r.n, fmtPct(r.v, 1)]));
-
-  const KM = DATA.km.filter(r => r.p >= '2018-06');
+  // 5. km y flota
+  const KM = DATA.km;
   const k0 = KM[0], k1 = KM[KM.length - 1];
   document.getElementById('t-km').textContent = '−' + fmtPct(1 - k1.km / k0.km);
   document.getElementById('t-km-d').textContent = `${lab(k0.p)} a ${lab(k1.p)}: de ${nf(2).format(k0.km / 1e6)} a ${nf(2).format(k1.km / 1e6)} millones`;
   document.getElementById('t-fe').textContent = `${k0.fe} → ${k1.fe}`;
   document.getElementById('t-fpe').textContent = `en servicio (flota productiva): ${k0.fpe} → ${k1.fpe}`;
   lineChart('ch-km', {
-    aria: 'Kilómetros recorridos por mes, 2018 a 2025',
+    aria: 'Kilómetros recorridos por mes según los estudios de costos',
     series: [{ n: 'Km por mes', c: '--s1', pts: KM.map(r => ({ x: toDate(r.p), y: r.km })) }],
     yMin: 0, endLabels: true, yFmt: (v, full) => nf(full ? 2 : 1).format(v / 1e6) + ' M',
-    tipTitle: (d) => 'Estudio ' + MES[d.getMonth()] + '-' + String(d.getFullYear()).slice(2),
+    tipTitle: (d) => 'Estudio ' + tipMes(d),
   });
   table('tb-km', ['Estudio', 'Km/mes', 'Flota total', 'Flota productiva'], KM.map(r => [lab(r.p), fmtInt(r.km), r.fe, r.fpe]));
 
+  // 6. patentamientos
   const P = DATA.motos_pat;
-  const pa = P.find(r => r.p === '2024-04'), pz = P[P.length - 1];
+  const pa = P[0], pz = P[P.length - 1];
   document.getElementById('pat-x').textContent = fmtPct(pz.v / pa.v - 1);
+  document.getElementById('pat-desde').textContent = largo(pa.p);
+  document.getElementById('pat-hasta').textContent = largo(pz.p);
   lineChart('ch-pat', {
     aria: 'Patentamientos de motos en Santa Fe, suma de 12 meses',
     series: [{ n: 'Patentamientos (12 meses)', c: '--s1', pts: P.map(r => ({ x: toDate(r.p), y: r.v })) }],
-    marks: [{ x: toDate('2023-12'), label: 'Uber Moto' }],
-    bands: [{ x0: toDate('2023-12'), x1: toDate('2024-03'), label: 'Boleto ×2,9' }],
     yMin: 0, endLabels: true, yLabelW: 56, yFmt: (v) => fmtInt(v),
-    tipTitle: (d) => MES[d.getMonth()] + '-' + String(d.getFullYear()).slice(2),
+    tipTitle: tipMes,
   });
   table('tb-pat', ['Mes', 'Patentamientos 12 meses'], P.map(r => [lab(r.p), fmtInt(r.v)]));
 
+  // 7. boletos por moto (mismos puntos que la pestania "grafico" de precio de motos.xlsx)
   const B = DATA.boletos_moto;
-  const bmax = B.reduce((a, b) => b.v > a.v ? b : a), blast = B[B.length - 1];
-  document.getElementById('bol-max').textContent = fmtInt(bmax.v);
-  document.getElementById('bol-last').textContent = fmtInt(blast.v);
-  document.getElementById('bol-anios').textContent = nf(1).format(blast.v / (2 * 21.7 * 12)) + ' años';
+  const b0 = B[0], b1 = B[B.length - 1];
+  document.getElementById('bol-p0').textContent = largo(b0.p);
+  document.getElementById('bol-v0').textContent = fmtInt(b0.v);
+  document.getElementById('bol-p1').textContent = largo(b1.p);
+  document.getElementById('bol-v1').textContent = fmtInt(b1.v);
+  document.getElementById('bol-anios').textContent = nf(1).format(b1.v / (2 * 21.7 * 12)) + ' años';
   lineChart('ch-moto', {
-    aria: 'Boletos necesarios para comprar una Honda Wave 110S',
+    aria: 'Boletos de TUP necesarios para comprar la moto más vendida',
     series: [{ n: 'Boletos', c: '--s1', dots: true, pts: B.map(r => ({ x: toDate(r.p), y: r.v })) }],
-    marks: [{ x: toDate('2023-12'), label: 'Uber Moto' }],
-    yMin: 0, endLabels: true, yFmt: (v) => fmtInt(v),
-    tipTitle: (d) => MES[d.getMonth()] + '-' + String(d.getFullYear()).slice(2),
-    tipExtra: (k) => { const r = B.find(q => toDate(q.p).getTime() === k); return r ? `<div class="r"><span>Precio</span><b>$${fmtInt(r.precio)}</b></div><div class="r"><span>Boleto</span><b>$${fmtInt(r.tarifa)}</b></div>` : ''; },
+    yMin: 0, noGrid: true, pointLabels: true, padX: 34, yFmt: (v) => fmtInt(v),
+    xAtPoints: (d) => tipMes(d),
+    tipTitle: tipMes,
   });
-  table('tb-moto', ['Mes', 'Precio moto', 'Boleto', 'Boletos'], B.map(r => [lab(r.p), '$' + fmtInt(r.precio), '$' + fmtInt(r.tarifa), fmtInt(r.v)]));
+  table('tb-moto', ['Mes', 'Boletos'], B.map(r => [lab(r.p), fmtInt(r.v)]));
 }
 
 /* ---------- navegacion ---------- */
@@ -699,7 +623,7 @@ try { const t = localStorage.getItem('tup-theme'); if (t) document.documentEleme
 
 render();
 let rt; addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(() => {
-  ['tb-viajes','tb-comp','tb-rubros','tb-km','tb-pat','tb-moto'].forEach(id => document.getElementById(id).innerHTML = '');
+  document.querySelectorAll('details.datos .tw').forEach(e => e.innerHTML = '');
   render(); }, 150); });
 </script>
 </body>
